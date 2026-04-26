@@ -45,7 +45,7 @@ export default function Navbar({ active }: { active?: string }) {
               <Image src="/images/twitter-x-logo-png-9.png" alt="Twitter" width={20} height={20} style={{ objectFit: 'contain' }} />
             </a>
             <a href="https://instagram.com/arobasedzair_" target="_blank" style={{ textDecoration: 'none' }}>
-              <Image src="/images/instagram_PNG10.png" alt="Instagram" width={20} height={20} style={{ objectFit: 'contain' }} />
+              <Image src="/images/instagram.png" alt="Instagram" width={20} height={20} style={{ objectFit: 'contain' }} />
             </a>
             <a href="/contact" style={{ color: '#f0f5f0', fontSize: '10px', fontWeight: 700, padding: '7px 14px', border: '1px solid #2a4a3a', borderRadius: '3px', textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none' }}>
               Contact
