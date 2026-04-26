@@ -19,17 +19,17 @@ export default async function HomePage() {
           <div className="hero-text" style={{ flex: '0 0 42%', padding: '60px 40px', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', zIndex: 2 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
               <div style={{ width: '28px', height: '2px', background: '#026f5c' }}></div>
-              <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '2.5px', color: '#026f5c' }}>Média Dzair — 100% Foot Algérien</span>
+              <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '2.5px', color: '#026f5c' }}>Media Dzair — 100% Foot Algerien</span>
             </div>
             <h1 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '70px', lineHeight: '0.92', margin: '0 0 20px', letterSpacing: '1px', color: '#f0f5f0', textTransform: 'uppercase' as const }}>
-              L'actualité<br />du football<br /><span style={{ color: '#026f5c' }}>Algérien</span>
+              L'actualite<br />du football<br /><span style={{ color: '#026f5c' }}>Algerien</span>
             </h1>
             <p style={{ fontSize: '13px', color: '#6a8a7a', lineHeight: 1.7, marginBottom: '32px', maxWidth: '340px' }}>
-              Toute l'actualité, les analyses, les transferts et les coulisses du football algérien en temps réel.
+              Toute l'actualite, les analyses, les transferts et les coulisses du football algerien en temps reel.
             </p>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' as const }}>
               <a href="/actualites" style={{ background: '#026f5c', color: '#f0f5f0', fontSize: '11px', fontWeight: 700, padding: '13px 26px', borderRadius: '3px', textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none' }}>
-                Découvrir les actus →
+                Decouvrir les actus →
               </a>
               <a href="/a-propos" style={{ color: '#f0f5f0', fontSize: '11px', fontWeight: 700, padding: '13px 26px', border: '1px solid #2a4a3a', borderRadius: '3px', textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none' }}>
                 Qui sommes-nous ?
@@ -57,7 +57,7 @@ export default async function HomePage() {
       <section style={{ padding: 'clamp(24px, 4vw, 48px) clamp(16px, 4vw, 40px)', maxWidth: '1280px', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
           <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
-          <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Dernières Actualités</h2>
+          <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Dernieres Actualites</h2>
         </div>
         <div className="articles-grid">
           {rest.slice(0, 6).map(article => (
@@ -89,11 +89,11 @@ export default async function HomePage() {
           <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
         </div>
         <div style={{ display: 'flex', gap: '16px', fontSize: '11px', flexWrap: 'wrap' as const, justifyContent: 'center' }}>
-          <a href="/mentions-legales" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Mentions légales</a>
+          <a href="/mentions-legales" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Mentions legales</a>
           <a href="/contact" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Contact</a>
           <a href="/a-propos" style={{ color: '#3a5a4a', textDecoration: 'none' }}>À Propos</a>
         </div>
-        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2025 · Média 100% Football Algérien</div>
+        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2026 · Media 100% Football Algerien</div>
       </div>
 
     </main>

@@ -8,7 +8,7 @@ export default function Navbar({ active }: { active?: string }) {
   const liens = [
     { label: 'Accueil', href: '/' },
     { label: 'Actualités', href: '/actualites' },
-    { label: 'Équipe Nationale', href: '/categorie/equipe-nationale' },
+    { label: 'Equipe Nationale', href: '/categorie/equipe-nationale' },
     { label: 'Transferts', href: '/categorie/transferts' },
     { label: 'Clubs', href: '/categorie/clubs' },
     { label: 'Galerie', href: '/galerie' },
@@ -21,7 +21,7 @@ export default function Navbar({ active }: { active?: string }) {
         
         {/* LIENS GAUCHE - desktop uniquement */}
         <div className="nav-desktop-left" style={{ display: 'flex', gap: '24px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
-          {['Accueil', 'Actualités', 'Équipe Nationale', 'Transferts', 'Clubs'].map(l => (
+          {['Accueil', 'Actualités', 'Equipe Nationale', 'Transferts', 'Clubs'].map(l => (
             <a key={l} href={l === 'Accueil' ? '/' : l === 'Actualités' ? '/actualites' : `/categorie/${l.toLowerCase().replace(' ', '-').replace('é', 'e').replace('î', 'i')}`} style={{ color: active === l ? '#026f5c' : '#5a7a6a', borderBottom: active === l ? '2px solid #026f5c' : 'none', paddingBottom: '2px', textDecoration: 'none' }}>
               {l}
             </a>
