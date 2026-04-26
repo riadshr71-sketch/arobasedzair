@@ -86,7 +86,7 @@ export default function MentionsLegales() {
         ))}
 
         <p style={{ fontSize: '12px', color: '#4a6a5a', textAlign: 'center' as const, marginTop: '40px' }}>
-          Dernière mise à jour : Avril 2025
+          Dernière mise à jour : Avril 2026
         </p>
 
       </div>
@@ -97,7 +97,7 @@ export default function MentionsLegales() {
           <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
         </div>
         <a href="/mentions-legales" style={{ fontSize: '11px', color: '#3a5a4a', textDecoration: 'none' }}>Mentions légales</a>
-        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2025 · Média 100% Football Algérien</div>
+        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2026 · Média 100% Football Algérien</div>
       </div>
 
     </main>
