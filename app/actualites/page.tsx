@@ -20,7 +20,7 @@ export default async function Actualites() {
           <div style={{ width: '28px', height: '2px', background: '#026f5c' }}></div>
         </div>
         <h1 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '52px', lineHeight: 1, margin: '0 0 12px', textTransform: 'uppercase' as const }}>
-          Dernières <span style={{ color: '#026f5c' }}>Actualités</span>
+          Dernieres <span style={{ color: '#026f5c' }}>Actualites</span>
         </h1>
         <p style={{ fontSize: '13px', color: '#5a7a6a' }}>
           {articles.length} article{articles.length > 1 ? 's' : ''} disponible{articles.length > 1 ? 's' : ''}
