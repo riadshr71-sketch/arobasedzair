@@ -5,7 +5,7 @@ export default function APropos() {
   return (
     <main style={{ background: '#080c08', minHeight: '100vh', color: '#f0f5f0' }}>
 
-      <Navbar active="À Propos" />
+      <Navbar active="A Propos" />
 
       <div style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', padding: '60px 40px', textAlign: 'center' as const }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '16px' }}>
@@ -14,7 +14,7 @@ export default function APropos() {
           <div style={{ width: '28px', height: '2px', background: '#026f5c' }}></div>
         </div>
         <h1 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '56px', lineHeight: 1, margin: '0 0 20px', textTransform: 'uppercase' as const }}>
-          Le média 100%<br /><span style={{ color: '#026f5c' }}>Football Algérien</span>
+          Le media 100%<br /><span style={{ color: '#026f5c' }}>Football Algerien</span>
         </h1>
         <p style={{ fontSize: '15px', color: '#6a8a7a', lineHeight: 1.8, maxWidth: '600px', margin: '0 auto' }}>
           Arobasedzair est un média indépendant dédié à l'actualité du football algérien. Créé par des passionnés, pour des passionnés.
