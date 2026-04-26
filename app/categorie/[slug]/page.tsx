@@ -51,7 +51,7 @@ export default async function CategoriePage({ params }: { params: Promise<{ slug
             </a>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
             {articles.map(article => (
               <ArticleCard key={article.slug} article={article} />
             ))}

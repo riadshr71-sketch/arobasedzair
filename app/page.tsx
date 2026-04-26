@@ -15,8 +15,8 @@ export default async function HomePage() {
       <Navbar active="Accueil" />
 
       {hero && (
-        <section style={{ display: 'flex', minHeight: '520px', position: 'relative' as const, overflow: 'hidden', background: '#060a06' }}>
-          <div style={{ flex: '0 0 42%', padding: '60px 40px', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', zIndex: 2 }}>
+        <section className="hero-section" style={{ display: 'flex', minHeight: '520px', position: 'relative' as const, overflow: 'hidden', background: '#060a06' }}>
+          <div className="hero-text" style={{ flex: '0 0 42%', padding: '60px 40px', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', zIndex: 2 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
               <div style={{ width: '28px', height: '2px', background: '#026f5c' }}></div>
               <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '2.5px', color: '#026f5c' }}>Média Dzair — 100% Foot Algérien</span>
@@ -27,7 +27,7 @@ export default async function HomePage() {
             <p style={{ fontSize: '13px', color: '#6a8a7a', lineHeight: 1.7, marginBottom: '32px', maxWidth: '340px' }}>
               Toute l'actualité, les analyses, les transferts et les coulisses du football algérien en temps réel.
             </p>
-            <div style={{ display: 'flex', gap: '12px' }}>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' as const }}>
               <a href="/actualites" style={{ background: '#026f5c', color: '#f0f5f0', fontSize: '11px', fontWeight: 700, padding: '13px 26px', borderRadius: '3px', textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none' }}>
                 Découvrir les actus →
               </a>
@@ -36,7 +36,7 @@ export default async function HomePage() {
               </a>
             </div>
           </div>
-          <div style={{ flex: 1, position: 'relative' as const, overflow: 'hidden' }}>
+          <div className="hero-image" style={{ flex: 1, position: 'relative' as const, overflow: 'hidden' }}>
             {hero.coverImage.url && (
               <Image src={hero.coverImage.url} alt={hero.titre} fill style={{ objectFit: 'cover', objectPosition: 'top center' }} priority />
             )}
@@ -54,19 +54,19 @@ export default async function HomePage() {
         </span>
       </div>
 
-      <section style={{ padding: '48px 40px', maxWidth: '1280px', margin: '0 auto' }}>
+      <section style={{ padding: 'clamp(24px, 4vw, 48px) clamp(16px, 4vw, 40px)', maxWidth: '1280px', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
           <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
           <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Dernières Actualités</h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+        <div className="articles-grid">
           {rest.slice(0, 6).map(article => (
             <ArticleCard key={article.slug} article={article} />
           ))}
         </div>
       </section>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderTop: '1px solid #0d2a1f', borderBottom: '1px solid #0d2a1f' }}>
+      <div className="features-grid">
         {[
           { icon: '⏱', title: 'Actus en temps réel', desc: "Toute l'actualité du football algérien, en direct." },
           { icon: '📸', title: 'Photos exclusives', desc: 'Des images inédites des matchs et des coulisses.' },
@@ -83,12 +83,12 @@ export default async function HomePage() {
         ))}
       </div>
 
-      <div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="footer">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
           <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
         </div>
-        <div style={{ display: 'flex', gap: '20px', fontSize: '11px' }}>
+        <div style={{ display: 'flex', gap: '16px', fontSize: '11px', flexWrap: 'wrap' as const, justifyContent: 'center' }}>
           <a href="/mentions-legales" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Mentions légales</a>
           <a href="/contact" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Contact</a>
           <a href="/a-propos" style={{ color: '#3a5a4a', textDecoration: 'none' }}>À Propos</a>

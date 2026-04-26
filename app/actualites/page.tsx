@@ -28,7 +28,7 @@ export default async function Actualites() {
       </div>
 
       <section style={{ padding: '48px 40px', maxWidth: '1280px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
           {articles.map(article => (
             <ArticleCard key={article.slug} article={article} />
           ))}
