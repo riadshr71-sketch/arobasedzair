@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
+
 export default function APropos() {
   return (
     <main style={{ background: '#080c08', minHeight: '100vh', color: '#f0f5f0' }}>
@@ -92,9 +93,9 @@ export default function APropos() {
         </div>
 
         <div style={{ background: '#026f5c', borderRadius: '8px', padding: '40px', textAlign: 'center' as const }}>
-          <h3 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '24px', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: '12px' }}>Demande d'accréditation presse</h3>
+          <h3 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '24px', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: '12px' }}>Collaborations & Partenariats</h3>
           <p style={{ fontSize: '13px', color: '#c0e0d0', lineHeight: 1.7, marginBottom: '24px', maxWidth: '500px', margin: '0 auto 24px' }}>
-            Pour toute demande d'accréditation, partenariat ou collaboration, contactez-nous directement.
+            Vous souhaitez collaborer avec Arobasedzair ? Écrivez-nous directement et nous reviendrons vers vous rapidement.
           </p>
           <a href="/contact" style={{ display: 'inline-block', background: '#f0f5f0', color: '#026f5c', fontSize: '12px', fontWeight: 700, padding: '13px 28px', borderRadius: '3px', textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none' }}>
             Nous contacter →
@@ -103,10 +104,15 @@ export default function APropos() {
 
       </div>
 
-      <div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="footer">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
           <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
+        </div>
+        <div style={{ display: 'flex', gap: '16px', fontSize: '11px', flexWrap: 'wrap' as const, justifyContent: 'center' }}>
+          <a href="/mentions-legales" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Mentions légales</a>
+          <a href="/contact" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Contact</a>
+          <a href="/a-propos" style={{ color: '#3a5a4a', textDecoration: 'none' }}>À Propos</a>
         </div>
         <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2025 · Média 100% Football Algérien</div>
       </div>
