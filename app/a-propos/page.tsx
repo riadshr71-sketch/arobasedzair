@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
 import CountUp from '../components/CountUp';
+export const metadata = { title: 'Qui sommes-nous' };
 
 export default function APropos() {
   return (

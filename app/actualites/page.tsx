@@ -2,6 +2,7 @@ import { getAllArticles } from '../lib/contentful';
 import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import ArticleCard from '../components/ArticleCard';
+export const metadata = { title: 'Actualites' };
 
 export const revalidate = 60;
 
@@ -45,7 +46,7 @@ export default async function Actualites() {
           <a href="/contact" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Contact</a>
           <a href="/a-propos" style={{ color: '#3a5a4a', textDecoration: 'none' }}>À Propos</a>
         </div>
-        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2025 · Média 100% Football Algérien</div>
+        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2026 · Média 100% Football Algérien</div>
       </div>
 
     </main>

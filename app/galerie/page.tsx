@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+export const metadata = { title: 'Galerie Photo' };
 import Image from 'next/image';
 import { createClient } from 'contentful';
 import GalerieClient from './GalerieClient';
@@ -61,7 +62,7 @@ export default async function Galerie() {
           <a href="/contact" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Contact</a>
           <a href="/a-propos" style={{ color: '#3a5a4a', textDecoration: 'none' }}>À Propos</a>
         </div>
-        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2025 · Média 100% Football Algérien</div>
+        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2026 · Média 100% Football Algérien</div>
       </div>
 
     </main>

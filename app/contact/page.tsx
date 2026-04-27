@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
+export const metadata = { title: 'Contact' };
 export default function Contact() {
   return (
     <main style={{ background: '#080c08', minHeight: '100vh', color: '#f0f5f0' }}>
@@ -109,7 +110,7 @@ export default function Contact() {
           <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
           <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
         </div>
-        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2025 · Média 100% Football Algérien</div>
+        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2026 · Média 100% Football Algérien</div>
       </div>
 
     </main>
