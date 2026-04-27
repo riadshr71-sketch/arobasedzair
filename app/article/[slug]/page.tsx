@@ -3,6 +3,7 @@ import { getArticleBySlug } from '../../lib/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import ReadingProgress from '../../components/ReadingProgress';
 
 export const dynamic = 'force-dynamic';
 
@@ -17,6 +18,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   return (
     <main style={{ background: '#080c08', minHeight: '100vh', color: '#f0f5f0' }}>
+      <ReadingProgress />
       <Navbar active="" />
 
       <div style={{ maxWidth: '820px', margin: '0 auto', padding: '48px 20px' }}>
