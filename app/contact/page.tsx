@@ -44,7 +44,7 @@ export default function Contact() {
                 </div>
               </div>
               <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '8px', padding: '20px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-                <Image src="/images/instagram_PNG10.png" alt="Instagram" width={28} height={28} style={{ objectFit: 'contain', flexShrink: 0 }} />
+                <Image src="/images/instagram.png" alt="Instagram" width={28} height={28} style={{ objectFit: 'contain', flexShrink: 0 }} />
                 <div>
                   <div style={{ fontSize: '11px', color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', fontWeight: 700, marginBottom: '4px' }}>Instagram</div>
                   <a href="https://instagram.com/arobasedzair_" target="_blank" style={{ fontSize: '14px', color: '#026f5c', textDecoration: 'none', fontWeight: 700 }}>@arobasedzair_</a>
