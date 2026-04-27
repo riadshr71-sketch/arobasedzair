@@ -83,7 +83,7 @@ export default function APropos() {
                 <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={28} height={28} style={{ objectFit: 'contain' }} />
               </div>
               <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '32px', color: '#026f5c', marginBottom: '6px' }}>
-                2.5K+
+                <CountUp end={2.5} suffix="K+" decimal={true} />
               </div>
               <div style={{ fontSize: '11px', color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', fontWeight: 700 }}>Abonnes Instagram</div>
             </div>
@@ -119,4 +119,11 @@ export default function APropos() {
         <div style={{ display: 'flex', gap: '16px', fontSize: '11px', flexWrap: 'wrap' as const, justifyContent: 'center' }}>
           <a href="/mentions-legales" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Mentions legales</a>
           <a href="/contact" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Contact</a>
-          <a href="/a-propos"
+          <a href="/a-propos" style={{ color: '#3a5a4a', textDecoration: 'none' }}>A Propos</a>
+        </div>
+        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2026 · Media 100% Football Algerien</div>
+      </div>
+
+    </main>
+  );
+}
