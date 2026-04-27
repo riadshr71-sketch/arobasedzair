@@ -100,3 +100,16 @@ a {
     grid-template-columns: 1fr !important;
   }
 }
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 320px !important;
+  }
+
+  .hero-slider h2 {
+    font-size: 22px !important;
+  }
+
+  .hero-slider-content {
+    padding: 20px !important;
+  }
+}

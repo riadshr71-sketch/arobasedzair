@@ -1,4 +1,5 @@
 import ArticleSlider from './components/ArticleSlider';
+import ArticleCard from './components/ArticleCard';
 import { getAllArticles } from './lib/contentful';
 import Image from 'next/image';
 import Navbar from './components/Navbar';
@@ -7,48 +8,39 @@ export const revalidate = 60;
 
 export default async function HomePage() {
   const articles = await getAllArticles();
+  const sliderArticles = articles.slice(0, 3);
+  const restArticles = articles.slice(3);
 
   return (
     <main style={{ background: '#080c08', minHeight: '100vh', color: '#f0f5f0' }}>
 
       <Navbar active="Accueil" />
 
-      <section className="hero-section" style={{ display: 'flex', minHeight: '520px', position: 'relative' as const, overflow: 'hidden', background: '#060a06' }}>
-        <div className="hero-text" style={{ flex: '0 0 42%', padding: '60px 40px', display: 'flex', flexDirection: 'column' as const, justifyContent: 'center', zIndex: 2 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-            <div style={{ width: '28px', height: '2px', background: '#026f5c' }}></div>
-            <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '2.5px', color: '#026f5c' }}>Media Dzair — 100% Foot Algerien</span>
-          </div>
-          <h1 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '70px', lineHeight: '0.92', margin: '0 0 20px', letterSpacing: '1px', color: '#f0f5f0', textTransform: 'uppercase' as const }}>
-            L'actualite<br />du football<br /><span style={{ color: '#026f5c' }}>Algerien</span>
-          </h1>
-          <p style={{ fontSize: '13px', color: '#6a8a7a', lineHeight: 1.7, marginBottom: '32px', maxWidth: '340px' }}>
-            Toute l'actualite, les analyses, les transferts et les coulisses du football algerien en temps reel.
-          </p>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' as const }}>
-            <a href="/actualites" style={{ background: '#026f5c', color: '#f0f5f0', fontSize: '11px', fontWeight: 700, padding: '13px 26px', borderRadius: '3px', textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none' }}>
-              Decouvrir les actus →
-            </a>
-            <a href="/a-propos" style={{ color: '#f0f5f0', fontSize: '11px', fontWeight: 700, padding: '13px 26px', border: '1px solid #2a4a3a', borderRadius: '3px', textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none' }}>
-              Qui sommes-nous ?
-            </a>
-          </div>
+      {/* BANDEAU PRESENTATION */}
+<div style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', padding: '14px 40px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+  <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
+  <span style={{ fontSize: '11px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '2px' }}>
+    Arobasedzair — <span style={{ color: '#026f5c' }}>L'actualite du football algerien en temps reel</span>
+  </span>
+</div>
+
+{/* SLIDER HERO */}
+<ArticleSlider articles={sliderArticles} />
+
+      {/* DERNIERES ACTUALITES */}
+      <section style={{ padding: '48px 40px', maxWidth: '1280px', margin: '0 auto' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
+          <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
+          <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Dernieres Actualites</h2>
         </div>
-        <div className="hero-image" style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#060a06' }}>
-          <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={320} height={320} style={{ objectFit: 'contain', opacity: 0.12 }} />
+        <div className="articles-grid">
+          {restArticles.map(article => (
+            <ArticleCard key={article.slug} article={article} />
+          ))}
         </div>
       </section>
 
-      <div style={{ background: '#026f5c', padding: '8px 0', overflow: 'hidden', whiteSpace: 'nowrap' as const }}>
-        <span className="ticker-inner" style={{ display: 'inline-block', fontSize: '11px', fontWeight: 700, color: '#f0f5f0', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>
-          {articles.slice(0, 8).map((article, i) => (
-            <span key={i}>⚽ {article.titre} &nbsp;●&nbsp; </span>
-          ))}
-        </span>
-      </div>
-
-      <ArticleSlider articles={articles.slice(0, 8)} />
-
+      {/* FEATURES */}
       <div className="features-grid">
         {[
           { icon: '⏱', title: 'Actus en temps reel', desc: "Toute l'actualite du football algerien, en direct." },
@@ -66,6 +58,7 @@ export default async function HomePage() {
         ))}
       </div>
 
+      {/* FOOTER */}
       <div className="footer">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
