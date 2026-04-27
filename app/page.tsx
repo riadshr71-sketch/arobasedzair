@@ -9,7 +9,7 @@ export const revalidate = 60;
 export default async function HomePage() {
   const articles = await getAllArticles();
   const sliderArticles = articles.slice(0, 3);
-  const restArticles = articles.slice(3);
+const restArticles = articles;
 
   return (
     <main style={{ background: '#080c08', minHeight: '100vh', color: '#f0f5f0' }}>
