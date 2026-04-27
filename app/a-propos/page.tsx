@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import Image from 'next/image';
+import CountUp from '../components/CountUp';
 
 export default function APropos() {
   return (
@@ -59,19 +60,42 @@ export default function APropos() {
             <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
             <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '22px', margin: 0, textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Arobasedzair en chiffres</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
-            {[
-              { chiffre: '2022', label: 'Annee de creation', icon: '📅' },
-              { chiffre: '13K+', label: 'Abonnes Twitter', icon: '𝕏' },
-              { chiffre: '2.5K+', label: 'Abonnes Instagram', icon: '◈' },
-              { chiffre: '30K+', label: 'Communaute cumulee', icon: '👥' },
-            ].map(item => (
-              <div key={item.label} style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '8px', padding: '28px 20px', textAlign: 'center' as const }}>
-                <div style={{ fontSize: '20px', marginBottom: '8px' }}>{item.icon}</div>
-                <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '32px', color: '#026f5c', marginBottom: '6px' }}>{item.chiffre}</div>
-                <div style={{ fontSize: '11px', color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', fontWeight: 700 }}>{item.label}</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
+
+            <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '8px', padding: '28px 20px', textAlign: 'center' as const }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>📅</div>
+              <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '32px', color: '#026f5c', marginBottom: '6px' }}>
+                <CountUp end={2022} suffix="" />
               </div>
-            ))}
+              <div style={{ fontSize: '11px', color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', fontWeight: 700 }}>Annee de creation</div>
+            </div>
+
+            <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '8px', padding: '28px 20px', textAlign: 'center' as const }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>𝕏</div>
+              <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '32px', color: '#026f5c', marginBottom: '6px' }}>
+                <CountUp end={13} suffix="K+" />
+              </div>
+              <div style={{ fontSize: '11px', color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', fontWeight: 700 }}>Abonnes Twitter</div>
+            </div>
+
+            <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '8px', padding: '28px 20px', textAlign: 'center' as const }}>
+              <div style={{ marginBottom: '8px', display: 'flex', justifyContent: 'center' }}>
+                <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={28} height={28} style={{ objectFit: 'contain' }} />
+              </div>
+              <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '32px', color: '#026f5c', marginBottom: '6px' }}>
+                2.5K+
+              </div>
+              <div style={{ fontSize: '11px', color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', fontWeight: 700 }}>Abonnes Instagram</div>
+            </div>
+
+            <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '8px', padding: '28px 20px', textAlign: 'center' as const }}>
+              <div style={{ fontSize: '20px', marginBottom: '8px' }}>👥</div>
+              <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '32px', color: '#026f5c', marginBottom: '6px' }}>
+                <CountUp end={30} suffix="K+" />
+              </div>
+              <div style={{ fontSize: '11px', color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', fontWeight: 700 }}>Communaute cumulee</div>
+            </div>
+
           </div>
         </div>
 
@@ -95,11 +119,4 @@ export default function APropos() {
         <div style={{ display: 'flex', gap: '16px', fontSize: '11px', flexWrap: 'wrap' as const, justifyContent: 'center' }}>
           <a href="/mentions-legales" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Mentions legales</a>
           <a href="/contact" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Contact</a>
-          <a href="/a-propos" style={{ color: '#3a5a4a', textDecoration: 'none' }}>A Propos</a>
-        </div>
-        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2026 · Media 100% Football Algerien</div>
-      </div>
-
-    </main>
-  );
-}
+          <a href="/a-propos"
