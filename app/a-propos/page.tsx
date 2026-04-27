@@ -81,7 +81,7 @@ export default function APropos() {
 
             <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '8px', padding: '28px 20px', textAlign: 'center' as const }}>
               <div style={{ marginBottom: '8px', display: 'flex', justifyContent: 'center' }}>
-                <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={28} height={28} style={{ objectFit: 'contain' }} />
+                <Image src="/images/instagram.png" alt="Arobasedzair" width={28} height={28} style={{ objectFit: 'contain' }} />
               </div>
               <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '32px', color: '#026f5c', marginBottom: '6px' }}>
                 <CountUp end={2.5} suffix="K+" decimal={true} />
