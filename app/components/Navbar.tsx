@@ -1,9 +1,12 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar({ active }: { active?: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const router = useRouter();
 
   const liens = [
     { label: 'Accueil', href: '/' },
@@ -11,29 +14,38 @@ export default function Navbar({ active }: { active?: string }) {
     { label: 'Equipe Nationale', href: '/categorie/equipe-nationale' },
     { label: 'Transferts', href: '/categorie/transferts' },
     { label: 'Clubs', href: '/categorie/clubs' },
+    { label: 'Recherche', href: '/recherche' },
     { label: 'Galerie', href: '/galerie' },
     { label: 'A Propos', href: '/a-propos' },
   ];
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/recherche?q=${encodeURIComponent(searchQuery)}`);
+      setMenuOpen(false);
+    }
+  };
+
   return (
     <>
       <nav style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', height: '70px', position: 'relative' as const, zIndex: 100 }}>
-        <div className="nav-desktop-left" style={{ display: 'flex', gap: '24px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
+        <div className="nav-desktop-left" style={{ display: 'flex', gap: '20px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
           {['Accueil', 'Actualites', 'Equipe Nationale', 'Transferts', 'Clubs'].map(l => (
             <a key={l} href={l === 'Accueil' ? '/' : l === 'Actualites' ? '/actualites' : `/categorie/${l.toLowerCase().replace(/ /g, '-')}`} style={{ color: active === l ? '#026f5c' : '#5a7a6a', borderBottom: active === l ? '2px solid #026f5c' : 'none', paddingBottom: '2px', textDecoration: 'none' }}>
               {l}
             </a>
           ))}
         </div>
+
         <a href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', position: 'absolute' as const, left: '50%', transform: 'translateX(-50%)' }}>
           <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={70} height={70} style={{ objectFit: 'contain' }} />
         </a>
-        <div className="nav-desktop-right" style={{ display: 'flex', alignItems: 'center', gap: '24px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
-          {['Galerie', 'A Propos'].map(l => (
-            <a key={l} href={l === 'Galerie' ? '/galerie' : '/a-propos'} style={{ color: active === l ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>
-              {l}
-            </a>
-          ))}
+
+        <div className="nav-desktop-right" style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
+          <a href="/recherche" style={{ color: active === 'Recherche' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>Recherche</a>
+          <a href="/galerie" style={{ color: active === 'Galerie' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>Galerie</a>
+          <a href="/a-propos" style={{ color: active === 'A Propos' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>A Propos</a>
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
             <a href="https://twitter.com/arobasedzair2" target="_blank" style={{ textDecoration: 'none' }}>
               <Image src="/images/twitter-x-logo-png-9.png" alt="Twitter" width={20} height={20} style={{ objectFit: 'contain' }} />
@@ -46,6 +58,7 @@ export default function Navbar({ active }: { active?: string }) {
             </a>
           </div>
         </div>
+
         <button className="nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: '8px', marginLeft: 'auto' }}>
           <div style={{ width: '24px', height: '2px', background: '#f0f5f0', marginBottom: '5px', transition: 'all 0.3s ease', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }}></div>
           <div style={{ width: '24px', height: '2px', background: '#f0f5f0', marginBottom: '5px', transition: 'all 0.3s ease', opacity: menuOpen ? 0 : 1 }}></div>
@@ -53,10 +66,22 @@ export default function Navbar({ active }: { active?: string }) {
         </button>
       </nav>
 
-      <div style={{ background: '#060a06', maxHeight: menuOpen ? '500px' : '0', overflow: 'hidden', transition: 'max-height 0.4s ease', zIndex: 99, position: 'relative' as const, borderBottom: menuOpen ? '1px solid #0d2a1f' : 'none' }}>
+      <div style={{ background: '#060a06', maxHeight: menuOpen ? '700px' : '0', overflow: 'hidden', transition: 'max-height 0.4s ease', zIndex: 99, position: 'relative' as const, borderBottom: menuOpen ? '1px solid #0d2a1f' : 'none' }}>
         <div style={{ padding: '16px 20px', display: 'flex', flexDirection: 'column' as const, gap: '4px' }}>
-          {liens.map((l, i) => (
-            <a key={l.label} href={l.href} onClick={() => setMenuOpen(false)} style={{ color: active === l.label ? '#026f5c' : '#8a9a8a', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none', padding: '12px 0', borderBottom: i < liens.length - 1 ? '1px solid #0d2a1f' : 'none' }}>
+          <form onSubmit={handleSearch} style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              placeholder="Rechercher un article..."
+              style={{ flex: 1, background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '4px', padding: '10px 14px', fontSize: '13px', color: '#f0f5f0', outline: 'none', fontFamily: 'Barlow, sans-serif' }}
+            />
+            <button type="submit" style={{ background: '#026f5c', border: 'none', borderRadius: '4px', padding: '10px 14px', color: '#f0f5f0', cursor: 'pointer', fontSize: '14px' }}>
+              🔍
+            </button>
+          </form>
+          {liens.filter(l => l.label !== 'Recherche').map((l, i) => (
+            <a key={l.label} href={l.href} onClick={() => setMenuOpen(false)} style={{ color: active === l.label ? '#026f5c' : '#8a9a8a', fontSize: '14px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none', padding: '12px 0', borderBottom: i < liens.length - 2 ? '1px solid #0d2a1f' : 'none' }}>
               {l.label}
             </a>
           ))}
