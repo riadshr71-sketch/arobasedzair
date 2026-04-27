@@ -20,8 +20,8 @@ const restArticles = articles;
 <div style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', padding: '14px 40px', display: 'flex', alignItems: 'center', gap: '12px' }}>
   <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
   <span style={{ fontSize: '11px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '2px' }}>
-    Arobasedzair — <span style={{ color: '#026f5c' }}>L'actualite du football algerien,comme tu la jamais vécu !</span>
-  </span>
+  Arobasedzair — <span style={{ color: '#026f5c' }}>Le football algerien comme vous ne l'avez jamais vecu</span>
+</span>
 </div>
 
 {/* SLIDER HERO */}
