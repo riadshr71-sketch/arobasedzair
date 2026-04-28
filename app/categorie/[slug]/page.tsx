@@ -51,7 +51,7 @@ export default async function CategoriePage({ params }: { params: Promise<{ slug
             </a>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+         <div className="categorie-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
             {articles.map(article => (
               <ArticleCard key={article.slug} article={article} />
             ))}
@@ -69,7 +69,7 @@ export default async function CategoriePage({ params }: { params: Promise<{ slug
           <a href="/contact" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Contact</a>
           <a href="/a-propos" style={{ color: '#3a5a4a', textDecoration: 'none' }}>À Propos</a>
         </div>
-        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2025 · Média 100% Football Algérien</div>
+        <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2026 · Média 100% Football Algérien</div>
       </div>
 
     </main>

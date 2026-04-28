@@ -40,7 +40,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <Image src={article.coverImage.url} alt={article.titre} fill style={{ objectFit: 'cover', objectPosition: 'center top' }} priority />
           </div>
         )}
-        <div style={{ fontSize: '16px', lineHeight: 1.9, color: '#c0d0c0' }}>
+        <div style={{ fontSize: '16px', lineHeight: 1.9, color: '#c0d0c0', display: 'flex', flexDirection: 'column' as const, gap: '16px' }}>
           {documentToReactComponents(article.content)}
         </div>
 
