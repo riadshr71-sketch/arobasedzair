@@ -49,9 +49,12 @@ export default function Navbar({ active }: { active?: string }) {
     placeholder="Rechercher..."
     style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRight: 'none', borderRadius: '3px 0 0 3px', padding: '6px 12px', fontSize: '11px', color: '#f0f5f0', outline: 'none', width: '160px', fontFamily: 'Barlow, sans-serif' }}
   />
-  <button type="submit" style={{ background: '#026f5c', border: 'none', borderRadius: '0 3px 3px 0', padding: '6px 10px', cursor: 'pointer', color: '#f0f5f0', fontSize: '13px', display: 'flex', alignItems: 'center' }}>
-    🔍
-  </button>
+ <button type="submit" style={{ background: '#026f5c', border: 'none', borderRadius: '0 3px 3px 0', padding: '6px 10px', cursor: 'pointer', color: '#f0f5f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f0f5f0" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="8"/>
+    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+  </svg>
+</button>
 </form>
           <a href="/galerie" style={{ color: active === 'Galerie' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>Galerie</a>
           <a href="/a-propos" style={{ color: active === 'A Propos' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>A Propos</a>
