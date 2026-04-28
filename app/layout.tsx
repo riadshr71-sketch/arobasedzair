@@ -6,12 +6,12 @@ export const metadata: Metadata = {
     default: 'Arobasedzair | Media Football Algerien',
     template: '%s | Arobasedzair',
   },
-  description: 'Arobasedzair, le media independant du football algerien. Actualites, transferts, analyses et photos exclusives en temps reel depuis 2022.',
+  description: 'Le football algerien comme vous ne l\'avez jamais vecu. Actualites, transferts, analyses et photos exclusives en temps reel depuis 2022.',
   keywords: 'football algerien, equipe nationale algerie, transferts, ligue 1 algerie, arobasedzair, media foot algerien',
   metadataBase: new URL('https://arobasedzair.com'),
   openGraph: {
-    title: 'Arobasedzair | Media Football Algerien',
-    description: 'Actualites, transferts, analyses et photos exclusives du football algerien.',
+    title: 'Arobasedzair — Le football algerien comme vous ne l\'avez jamais vecu',
+    description: 'Le football algerien comme vous ne l\'avez jamais vecu. Actualites, transferts, analyses et photos exclusives.',
     url: 'https://arobasedzair.com',
     siteName: 'Arobasedzair',
     locale: 'fr_FR',
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@arobasedzair2',
-    title: 'Arobasedzair | Media Football Algerien',
-    description: 'Le media independant du football algerien.',
+    title: 'Arobasedzair — Le football algerien comme vous ne l\'avez jamais vecu',
+    description: 'Le football algerien comme vous ne l\'avez jamais vecu.',
   },
 };
 
