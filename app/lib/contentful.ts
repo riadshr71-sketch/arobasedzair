@@ -8,18 +8,25 @@ const client = createClient({
 export async function getAllArticles() {
   const entries = await client.getEntries({
     content_type: 'article',
+    limit: 100,
   });
 
-  return entries.items.map((item: any) => ({
-    titre: item.fields.titre as string,
-    slug: item.fields.slug as string,
-    content: item.fields.content,
-    coverImage: item.fields.coverImage
-      ? { url: 'https:' + (item.fields.coverImage as any).fields.file.url }
-      : { url: '' },
-    publisheddate: item.fields.publisheddate as string,
-    category: item.fields.category as string,
-  }));
+  return entries.items
+    .map((item: any) => ({
+      titre: item.fields.titre as string,
+      slug: item.fields.slug as string,
+      content: item.fields.content,
+      coverImage: item.fields.coverImage
+        ? { url: 'https:' + (item.fields.coverImage as any).fields.file.url }
+        : { url: '' },
+      publisheddate: item.fields.publisheddate as string,
+      category: item.fields.category as string,
+    }))
+    .sort((a, b) => {
+      if (!a.publisheddate) return 1;
+      if (!b.publisheddate) return -1;
+      return new Date(b.publisheddate).getTime() - new Date(a.publisheddate).getTime();
+    });
 }
 
 export async function getArticleBySlug(slug: string) {
@@ -27,9 +34,6 @@ export async function getArticleBySlug(slug: string) {
     content_type: 'article',
     limit: 100,
   });
-
-  console.log('Slug cherché:', slug);
-  console.log('Slugs disponibles:', entries.items.map((i: any) => i.fields.slug));
 
   const item = entries.items.find((item: any) => item.fields.slug === slug) as any;
   if (!item) return null;
