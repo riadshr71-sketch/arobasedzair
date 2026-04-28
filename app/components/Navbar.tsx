@@ -43,7 +43,16 @@ export default function Navbar({ active }: { active?: string }) {
         </a>
 
         <div className="nav-desktop-right" style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
-          <a href="/recherche" style={{ color: active === 'Recherche' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>Recherche</a>
+      <form onSubmit={(e) => { e.preventDefault(); const q = (e.currentTarget.querySelector('input') as HTMLInputElement).value; if (q.trim()) window.location.href = `/recherche?q=${encodeURIComponent(q)}`; }} style={{ display: 'flex', alignItems: 'center', gap: '0' }}>
+  <input
+    type="text"
+    placeholder="Rechercher..."
+    style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRight: 'none', borderRadius: '3px 0 0 3px', padding: '6px 12px', fontSize: '11px', color: '#f0f5f0', outline: 'none', width: '160px', fontFamily: 'Barlow, sans-serif' }}
+  />
+  <button type="submit" style={{ background: '#026f5c', border: 'none', borderRadius: '0 3px 3px 0', padding: '6px 10px', cursor: 'pointer', color: '#f0f5f0', fontSize: '13px', display: 'flex', alignItems: 'center' }}>
+    🔍
+  </button>
+</form>
           <a href="/galerie" style={{ color: active === 'Galerie' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>Galerie</a>
           <a href="/a-propos" style={{ color: active === 'A Propos' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>A Propos</a>
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
