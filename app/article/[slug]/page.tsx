@@ -1,9 +1,10 @@
 import Navbar from '../../components/Navbar';
-import { getArticleBySlug } from '../../lib/contentful';
+import { getArticleBySlug, getAllArticles } from '../../lib/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import ReadingProgress from '../../components/ReadingProgress';
+import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
 
@@ -11,6 +12,11 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
   if (!article) return notFound();
+
+  const tousLesArticles = await getAllArticles();
+  const similaires = tousLesArticles
+    .filter(a => a.slug !== slug && a.category === article.category)
+    .slice(0, 3);
 
   const articleUrl = `https://arobasedzair.com/article/${slug}`;
   const titre = encodeURIComponent(article.titre);
@@ -44,6 +50,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {documentToReactComponents(article.content)}
         </div>
 
+        {/* PARTAGE */}
         <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #0d2a1f' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
             <div style={{ width: '4px', height: '20px', background: '#026f5c' }}></div>
@@ -74,7 +81,43 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
       </div>
 
-      <div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '60px' }}>
+      {/* ARTICLES SIMILAIRES */}
+      {similaires.length > 0 && (
+        <div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', padding: '48px 40px' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
+              <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
+              <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Articles similaires</h2>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+              {similaires.map(a => (
+                <Link key={a.slug} href={`/article/${a.slug}`} style={{ textDecoration: 'none' }}>
+                  <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '6px', overflow: 'hidden', transition: 'border-color 0.3s' }}>
+                    {a.coverImage.url && (
+                      <div style={{ position: 'relative' as const, width: '100%', height: '180px', overflow: 'hidden' }}>
+                        <Image src={a.coverImage.url} alt={a.titre} fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
+                      </div>
+                    )}
+                    <div style={{ padding: '14px' }}>
+                      <div style={{ display: 'inline-block', background: '#026f5c', color: '#f0f5f0', fontSize: '8px', fontWeight: 700, padding: '2px 7px', borderRadius: '2px', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: '8px' }}>
+                        {a.category}
+                      </div>
+                      <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '13px', color: '#f0f5f0', lineHeight: 1.3, textTransform: 'uppercase' as const, marginBottom: '6px' }}>
+                        {a.titre}
+                      </div>
+                      <div style={{ fontSize: '11px', color: '#4a6a5a' }}>
+                        {a.publisheddate ? new Date(a.publisheddate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' }) : ''}
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
           <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
