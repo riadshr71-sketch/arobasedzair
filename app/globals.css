@@ -118,3 +118,8 @@ a {
     grid-template-columns: 1fr !important;
   }
 }
+@media (max-width: 768px) {
+  .similaires-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
