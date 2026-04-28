@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Arobasedzair — Le football algerien comme vous ne l\'avez jamais vecu',
+    default: 'Arobasedzair — Le football algérien comme vous ne l\'avez jamais vécu',
     template: '%s | Arobasedzair',
   },
   description: 'Le football algerien comme vous ne l\'avez jamais vecu. Actualites, transferts, analyses et photos exclusives en temps reel depuis 2022.',
