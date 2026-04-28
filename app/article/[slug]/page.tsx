@@ -50,7 +50,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {documentToReactComponents(article.content)}
         </div>
 
-        {/* PARTAGE */}
         <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #0d2a1f' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
             <div style={{ width: '4px', height: '20px', background: '#026f5c' }}></div>
@@ -81,7 +80,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         </div>
       </div>
 
-      {/* ARTICLES SIMILAIRES */}
       {similaires.length > 0 && (
         <div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', padding: '48px 40px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
@@ -89,10 +87,10 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
               <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Articles similaires</h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+            <div className="similaires-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
               {similaires.map(a => (
                 <Link key={a.slug} href={`/article/${a.slug}`} style={{ textDecoration: 'none' }}>
-                  <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '6px', overflow: 'hidden', transition: 'border-color 0.3s' }}>
+                  <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '6px', overflow: 'hidden' }}>
                     {a.coverImage.url && (
                       <div style={{ position: 'relative' as const, width: '100%', height: '180px', overflow: 'hidden' }}>
                         <Image src={a.coverImage.url} alt={a.titre} fill style={{ objectFit: 'cover', objectPosition: 'center top' }} />
