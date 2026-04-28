@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     default: 'Arobasedzair — Le football algérien comme vous ne l\'avez jamais vécu',
     template: '%s | Arobasedzair',
   },
-  description: 'Le football algerien comme vous ne l\'avez jamais vecu. Actualites, transferts, analyses et photos exclusives en temps reel depuis 2022.',
+  description: 'Le football algérien comme vous ne l\'avez jamais vécu. Actualites, transferts, analyses et photos exclusives en temps reel depuis 2022.',
   keywords: 'football algerien, equipe nationale algerie, transferts, ligue 1 algerie, arobasedzair, media foot algerien',
   metadataBase: new URL('https://arobasedzair.com'),
   openGraph: {
