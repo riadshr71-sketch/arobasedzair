@@ -11,7 +11,7 @@ export default function Navbar({ active }: { active?: string }) {
   const liens = [
     { label: 'Accueil', href: '/' },
     { label: 'Actualites', href: '/actualites' },
-    { label: 'Equipe Nationale', href: '/categorie/equipe-nationale' },
+    { label: 'Selection', href: '/categorie/equipe-nationale' },
     { label: 'Transferts', href: '/categorie/transferts' },
     { label: 'Clubs', href: '/categorie/clubs' },
     { label: 'Recherche', href: '/recherche' },
@@ -31,8 +31,13 @@ export default function Navbar({ active }: { active?: string }) {
     <>
       <nav style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', height: '70px', position: 'relative' as const, zIndex: 100 }}>
         <div className="nav-desktop-left" style={{ display: 'flex', gap: '20px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
-          {['Accueil', 'Actualites', 'Equipe Nationale', 'Transferts', 'Clubs'].map(l => (
-            <a key={l} href={l === 'Accueil' ? '/' : l === 'Actualites' ? '/actualites' : `/categorie/${l.toLowerCase().replace(/ /g, '-')}`} style={{ color: active === l ? '#026f5c' : '#5a7a6a', borderBottom: active === l ? '2px solid #026f5c' : 'none', paddingBottom: '2px', textDecoration: 'none' }}>
+          {['Accueil', 'Actualites', 'Selection', 'Transferts', 'Clubs'].map(l => (
+            <a key={l} href={
+              l === 'Accueil' ? '/' :
+              l === 'Actualites' ? '/actualites' :
+              l === 'Selection' ? '/categorie/equipe-nationale' :
+              `/categorie/${l.toLowerCase().replace(/ /g, '-')}`
+            } style={{ color: active === l ? '#026f5c' : '#5a7a6a', borderBottom: active === l ? '2px solid #026f5c' : 'none', paddingBottom: '2px', textDecoration: 'none' }}>
               {l}
             </a>
           ))}
@@ -43,19 +48,19 @@ export default function Navbar({ active }: { active?: string }) {
         </a>
 
         <div className="nav-desktop-right" style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
-      <form onSubmit={(e) => { e.preventDefault(); const q = (e.currentTarget.querySelector('input') as HTMLInputElement).value; if (q.trim()) window.location.href = `/recherche?q=${encodeURIComponent(q)}`; }} style={{ display: 'flex', alignItems: 'center', gap: '0' }}>
-  <input
-    type="text"
-    placeholder="Rechercher..."
-    style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRight: 'none', borderRadius: '3px 0 0 3px', padding: '6px 12px', fontSize: '11px', color: '#f0f5f0', outline: 'none', width: '160px', fontFamily: 'Barlow, sans-serif' }}
-  />
- <button type="submit" style={{ background: '#026f5c', border: 'none', borderRadius: '0 3px 3px 0', padding: '6px 10px', cursor: 'pointer', color: '#f0f5f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f0f5f0" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="11" cy="11" r="8"/>
-    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-  </svg>
-</button>
-</form>
+          <form onSubmit={(e) => { e.preventDefault(); const q = (e.currentTarget.querySelector('input') as HTMLInputElement).value; if (q.trim()) window.location.href = `/recherche?q=${encodeURIComponent(q)}`; }} style={{ display: 'flex', alignItems: 'center', gap: '0' }}>
+            <input
+              type="text"
+              placeholder="Rechercher..."
+              style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRight: 'none', borderRadius: '3px 0 0 3px', padding: '6px 12px', fontSize: '11px', color: '#f0f5f0', outline: 'none', width: '160px', fontFamily: 'Barlow, sans-serif' }}
+            />
+            <button type="submit" style={{ background: '#026f5c', border: 'none', borderRadius: '0 3px 3px 0', padding: '6px 10px', cursor: 'pointer', color: '#f0f5f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f0f5f0" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </button>
+          </form>
           <a href="/galerie" style={{ color: active === 'Galerie' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>Galerie</a>
           <a href="/a-propos" style={{ color: active === 'A Propos' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>A Propos</a>
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
