@@ -54,7 +54,7 @@ export default async function HomePage() {
         : date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
       const isEven = i % 2 === 0;
       const bg = isEven ? '#026f5c' : '#00c853';
-      const textColor = '#080c08';
+      const textColor = '#ffffff';
       const categoryColor = isEven ? '#003d2e' : '#005c27';
 
       return (
