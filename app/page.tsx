@@ -53,7 +53,7 @@ export default async function HomePage() {
         : isYesterday ? 'Hier'
         : date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
       const isEven = i % 2 === 0;
-      const bg = isEven ? '#026f5c' : '#00c853';
+      const bg = isEven ? '#026f5c' : '#01503f';
       const textColor = '#ffffff';
       const categoryColor = isEven ? '#003d2e' : '#005c27';
 
