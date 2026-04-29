@@ -7,10 +7,15 @@ import ReadingProgress from '../../components/ReadingProgress';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
   if (!article) return {};
+
+  const imageUrl = article.coverImage.url
+    ? (article.coverImage.url.startsWith('//') ? 'https:' + article.coverImage.url : article.coverImage.url)
+    : 'https://arobasedzair.com/images/arobaselogo.png';
 
   return {
     title: article.titre,
@@ -19,17 +24,18 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       title: article.titre,
       description: article.titre,
       url: `https://arobasedzair.com/article/${slug}`,
-      images: [{ url: article.coverImage.url, width: 1200, height: 630 }],
+      images: [{ url: imageUrl, width: 1200, height: 630 }],
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title: article.titre,
       description: article.titre,
-      images: [article.coverImage.url],
+      images: [imageUrl],
     },
   };
 }
+
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
