@@ -4,6 +4,7 @@ import { getAllArticles } from './lib/contentful';
 import Image from 'next/image';
 import Navbar from './components/Navbar';
 import Link from 'next/link';
+import Newsletter from './components/Newsletter';
 
 export const revalidate = 60;
 
@@ -112,7 +113,7 @@ export default async function HomePage() {
           </div>
         ))}
       </div>
-
+<Newsletter />
       {/* FOOTER */}
       <div className="footer">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
