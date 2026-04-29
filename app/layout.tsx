@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import CookieBanner from './components/CookieBanner';
 import './globals.css';
+
 export const metadata: Metadata = {
   title: {
     default: 'Arobasedzair — Le football algérien comme vous ne l\'avez jamais vécu',
@@ -32,9 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr">
       <body style={{ margin: 0, padding: 0, background: '#080c08' }}>
         <CookieBanner />
-         <Analytics />
-  {children}
-</body>
+        <Analytics />
         {children}
       </body>
     </html>
