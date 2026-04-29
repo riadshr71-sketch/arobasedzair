@@ -58,7 +58,9 @@ export default async function HomePage() {
               <span style={{ fontSize: '11px', fontWeight: 700, color: '#026f5c', flexShrink: 0, minWidth: '55px' }}>
                 {label}
               </span>
-            
+              <span style={{ fontSize: '10px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', flexShrink: 0 }}>
+                {article.category}
+              </span>
               <span style={{ fontSize: '13px', fontWeight: 700, color: '#e0e8e0', lineHeight: 1.3, fontFamily: 'Druk, Georgia, serif', textTransform: 'uppercase' as const }}>
                 {article.titre}
               </span>
