@@ -3,13 +3,15 @@ import ArticleCard from './components/ArticleCard';
 import { getAllArticles } from './lib/contentful';
 import Image from 'next/image';
 import Navbar from './components/Navbar';
+import Link from 'next/link';
 
 export const revalidate = 60;
 
 export default async function HomePage() {
   const articles = await getAllArticles();
   const sliderArticles = articles.slice(0, 3);
-const restArticles = articles;
+  const restArticles = articles.slice(0, 8);
+  const filArticles = articles.slice(0, 10);
 
   return (
     <main style={{ background: '#080c08', minHeight: '100vh', color: '#f0f5f0' }}>
@@ -17,15 +19,48 @@ const restArticles = articles;
       <Navbar active="Accueil" />
 
       {/* BANDEAU PRESENTATION */}
-<div style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', padding: '14px 40px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-  <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
-  <span style={{ fontSize: '11px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '2px' }}>
-  Arobasedzair — <span style={{ color: '#026f5c' }}>Le football algérien comme vous ne l'avez jamais vécu</span>
-</span>
-</div>
+      <div style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', padding: '14px 40px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
+        <span style={{ fontSize: '11px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '2px' }}>
+          Arobasedzair — <span style={{ color: '#026f5c' }}>Le football algérien comme vous ne l'avez jamais vécu</span>
+        </span>
+      </div>
 
-{/* SLIDER HERO */}
-<ArticleSlider articles={sliderArticles} />
+      {/* SLIDER HERO */}
+      <ArticleSlider articles={sliderArticles} />
+
+      {/* FIL AROBASE DZAIR */}
+      <div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', borderBottom: '1px solid #0d2a1f', padding: '28px 40px' }}>
+        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0' }}>
+              <div style={{ background: '#026f5c', padding: '6px 14px' }}>
+                <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', color: '#f0f5f0' }}>Fil Arobase Dzair</span>
+              </div>
+            </div>
+            <a href="/actualites" style={{ fontSize: '10px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', textDecoration: 'none' }}>
+              Voir tout le fil →
+            </a>
+          </div>
+          <div>
+            {filArticles.map((article, i) => (
+              <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', padding: '14px 0', borderBottom: i < filArticles.length - 1 ? '1px solid #0d2a1f' : 'none' }}>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#026f5c', flexShrink: 0, minWidth: '60px' }}>
+                    {article.publisheddate ? new Date(article.publisheddate).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) : '--:--'}
+                  </span>
+                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', flexShrink: 0 }}>
+                    {article.category}
+                  </span>
+                  <span style={{ fontSize: '14px', fontWeight: 700, color: '#e0e8e0', lineHeight: 1.3, fontFamily: 'Druk, Georgia, serif', textTransform: 'uppercase' as const }}>
+                    {article.titre}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* DERNIERES ACTUALITES */}
       <section style={{ padding: '48px 40px', maxWidth: '1280px', margin: '0 auto' }}>
@@ -37,6 +72,12 @@ const restArticles = articles;
           {restArticles.map(article => (
             <ArticleCard key={article.slug} article={article} />
           ))}
+        </div>
+        <div style={{ position: 'relative' as const, marginTop: '-120px', height: '120px', background: 'linear-gradient(to bottom, transparent, #080c08)', zIndex: 2 }} />
+        <div style={{ textAlign: 'center' as const, paddingTop: '16px' }}>
+          <a href="/actualites" style={{ display: 'inline-block', background: 'transparent', border: '1px solid #026f5c', color: '#026f5c', fontSize: '11px', fontWeight: 700, padding: '12px 32px', borderRadius: '3px', textTransform: 'uppercase' as const, letterSpacing: '1.5px', textDecoration: 'none' }}>
+            Voir toutes les actualités →
+          </a>
         </div>
       </section>
 
