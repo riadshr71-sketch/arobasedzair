@@ -53,17 +53,20 @@ export default async function HomePage() {
         : isYesterday ? 'Hier'
         : date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
       const isEven = i % 2 === 0;
+      const bg = isEven ? '#026f5c' : '#00c853';
+      const textColor = '#080c08';
+      const categoryColor = isEven ? '#003d2e' : '#005c27';
 
       return (
         <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '14px 40px', background: isEven ? '#026f5c' : '#080c08' }}>
-            <span style={{ fontSize: '11px', fontWeight: 700, color: isEven ? '#080c08' : '#026f5c', flexShrink: 0, minWidth: '55px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '14px 40px', background: bg }}>
+            <span style={{ fontSize: '11px', fontWeight: 700, color: textColor, flexShrink: 0, minWidth: '55px' }}>
               {label}
             </span>
-            <span style={{ fontSize: '10px', fontWeight: 700, color: isEven ? '#003d2e' : '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', flexShrink: 0 }}>
+            <span style={{ fontSize: '10px', fontWeight: 700, color: categoryColor, textTransform: 'uppercase' as const, letterSpacing: '1px', flexShrink: 0 }}>
               {article.category}
             </span>
-            <span style={{ fontSize: '13px', fontWeight: 700, color: isEven ? '#080c08' : '#e0e8e0', lineHeight: 1.3, fontFamily: 'Druk, Georgia, serif', textTransform: 'uppercase' as const }}>
+            <span style={{ fontSize: '13px', fontWeight: 700, color: textColor, lineHeight: 1.3, fontFamily: 'Druk, Georgia, serif', textTransform: 'uppercase' as const }}>
               {article.titre}
             </span>
           </div>
