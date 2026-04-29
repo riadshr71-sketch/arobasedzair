@@ -10,7 +10,7 @@ export default async function CategoriePage({ params }: { params: Promise<{ slug
   const tous = await getAllArticles();
 
   const categories: { [key: string]: string } = {
-    'equipe-nationale': 'Equipe Nationale',
+   'equipe-nationale': 'Selection',
     'transferts': 'Transferts',
     'clubs': 'Clubs',
   };
