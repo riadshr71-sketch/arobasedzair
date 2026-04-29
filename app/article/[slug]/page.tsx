@@ -7,7 +7,29 @@ import ReadingProgress from '../../components/ReadingProgress';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const article = await getArticleBySlug(slug);
+  if (!article) return {};
 
+  return {
+    title: article.titre,
+    description: article.titre,
+    openGraph: {
+      title: article.titre,
+      description: article.titre,
+      url: `https://arobasedzair.com/article/${slug}`,
+      images: [{ url: article.coverImage.url, width: 1200, height: 630 }],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.titre,
+      description: article.titre,
+      images: [article.coverImage.url],
+    },
+  };
+}
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
