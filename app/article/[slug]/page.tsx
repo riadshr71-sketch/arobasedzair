@@ -39,7 +39,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           {article.titre}
         </h1>
         <p style={{ fontSize: '13px', color: '#4a6a5a', marginBottom: '32px' }}>
-          {article.publisheddate ? new Date(article.publisheddate).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) : ''}
+          {article.publisheddate ? new Date(article.publisheddate).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) + ' à ' + new Date(article.publisheddate).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) : ''}
         </p>
         {article.coverImage.url && (
           <div style={{ position: 'relative' as const, width: '100%', height: '440px', borderRadius: '8px', overflow: 'hidden', marginBottom: '40px' }}>

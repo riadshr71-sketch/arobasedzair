@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Navbar from '../components/Navbar'
+
 export default function MentionsLegales() {
   return (
     <main style={{ background: '#080c08', minHeight: '100vh', color: '#f0f5f0' }}>
@@ -24,9 +25,8 @@ export default function MentionsLegales() {
             titre: 'Éditeur du site',
             contenu: [
               'Nom du média : Arobasedzair',
-              'Directeur de publication : Riad',
               'Email : arobasedzair@proton.me',
-              'Réseaux sociaux : @arobasedzair2 (Twitter) · @arobasedzair_ (Instagram) · @arobasedzair (TikTok)',
+              'Réseaux sociaux : @arobasedzair2 (Twitter/X) · @arobasedzair_ (Instagram) · @arobasedzair (TikTok)',
             ]
           },
           {
@@ -40,9 +40,10 @@ export default function MentionsLegales() {
           {
             titre: 'Propriété intellectuelle',
             contenu: [
-              'L\'ensemble du contenu de ce site (textes, images, vidéos, logos) est la propriété exclusive d\'Arobasedzair.',
-              'Toute reproduction, même partielle, est interdite sans autorisation écrite préalable.',
-              'Les photos publiées sur ce site sont la propriété de Riad / Arobasedzair sauf mention contraire.',
+              'Les textes et contenus éditoriaux publiés sur ce site sont la propriété d\'Arobasedzair.',
+              'Les images illustrant les articles sont issues de sources tierces (agences, réseaux sociaux, clubs). Elles restent la propriété de leurs auteurs respectifs et sont utilisées à titre informatif.',
+              'Les photos de la galerie sont la propriété exclusive d\'Arobasedzair et ne peuvent être reproduites sans autorisation écrite préalable.',
+              'Le logo Arobasedzair est une création originale protégée.',
             ]
           },
           {
@@ -51,22 +52,22 @@ export default function MentionsLegales() {
               'Les données collectées via le formulaire de contact (nom, email, message) sont utilisées uniquement pour répondre aux demandes.',
               'Elles ne sont pas transmises à des tiers.',
               'Conformément au RGPD, vous disposez d\'un droit d\'accès, de rectification et de suppression de vos données.',
-              'Pour exercer ce droit, contactez-nous à : arobasedzair@proton.me',
+              'Pour exercer ce droit : arobasedzair@proton.me',
             ]
           },
           {
             titre: 'Cookies',
             contenu: [
-              'Ce site utilise des cookies techniques nécessaires à son bon fonctionnement.',
-              'Aucun cookie publicitaire ou de traçage n\'est utilisé sans votre consentement.',
+              'Ce site utilise uniquement des cookies techniques nécessaires à son bon fonctionnement.',
+              'Aucun cookie publicitaire ou de traçage n\'est utilisé.',
             ]
           },
           {
             titre: 'Responsabilité',
             contenu: [
               'Arobasedzair s\'efforce de fournir des informations exactes et à jour.',
-              'Nous ne pouvons être tenus responsables d\'éventuelles erreurs ou omissions dans le contenu.',
-              'Les liens externes présents sur le site renvoient vers des sites tiers dont nous ne sommes pas responsables.',
+              'Nous ne pouvons être tenus responsables d\'éventuelles erreurs ou omissions.',
+              'Les liens externes renvoient vers des sites tiers dont nous ne sommes pas responsables.',
             ]
           },
         ].map(section => (
