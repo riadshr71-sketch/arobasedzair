@@ -29,38 +29,48 @@ export default async function HomePage() {
       {/* SLIDER HERO */}
       <ArticleSlider articles={sliderArticles} />
 
-      {/* FIL AROBASE DZAIR */}
-      <div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', borderBottom: '1px solid #0d2a1f', padding: '28px 40px' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0' }}>
-              <div style={{ background: '#026f5c', padding: '6px 14px' }}>
-                <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', color: '#f0f5f0' }}>Fil Arobase Dzair</span>
-              </div>
-            </div>
-            <a href="/actualites" style={{ fontSize: '10px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', textDecoration: 'none' }}>
-              Voir tout le fil →
-            </a>
-          </div>
-          <div>
-            {filArticles.map((article, i) => (
-              <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', padding: '14px 0', borderBottom: i < filArticles.length - 1 ? '1px solid #0d2a1f' : 'none' }}>
-                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#026f5c', flexShrink: 0, minWidth: '60px' }}>
-                    {article.publisheddate ? new Date(article.publisheddate).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }) : '--:--'}
-                  </span>
-                  <span style={{ fontSize: '10px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', flexShrink: 0 }}>
-                    {article.category}
-                  </span>
-                  <span style={{ fontSize: '14px', fontWeight: 700, color: '#e0e8e0', lineHeight: 1.3, fontFamily: 'Druk, Georgia, serif', textTransform: 'uppercase' as const }}>
-                    {article.titre}
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
+     {/* FIL EN DIRECT */}
+<div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', borderBottom: '1px solid #0d2a1f', padding: '20px 40px' }}>
+  <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#026f5c', animation: 'pulse 1.5s infinite' }} />
+        <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', color: '#f0f5f0' }}>Fil en direct</span>
       </div>
+      <a href="/actualites" style={{ fontSize: '10px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', textDecoration: 'none' }}>
+        Voir tout →
+      </a>
+    </div>
+    <div>
+      {articles.slice(0, 5).map((article, i) => {
+        const date = article.publisheddate ? new Date(article.publisheddate) : null;
+        const now = new Date();
+        const isToday = date && date.toDateString() === now.toDateString();
+        const isYesterday = date && new Date(now.getTime() - 86400000).toDateString() === date.toDateString();
+        const label = !date ? '' : isToday
+          ? date.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })
+          : isYesterday ? 'Hier'
+          : date.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' });
+
+        return (
+          <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', padding: '12px 0', borderBottom: i < 4 ? '1px solid #0d2a1f' : 'none' }}>
+              <span style={{ fontSize: '11px', fontWeight: 700, color: '#026f5c', flexShrink: 0, minWidth: '55px' }}>
+                {label}
+              </span>
+              <span style={{ fontSize: '10px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', flexShrink: 0 }}>
+                {article.category}
+              </span>
+              <span style={{ fontSize: '13px', fontWeight: 700, color: '#e0e8e0', lineHeight: 1.3, fontFamily: 'Druk, Georgia, serif', textTransform: 'uppercase' as const }}>
+                {article.titre}
+              </span>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
+  </div>
+</div>
 
       {/* DERNIERES ACTUALITES */}
       <section style={{ padding: '48px 40px', maxWidth: '1280px', margin: '0 auto' }}>
