@@ -21,6 +21,7 @@ export async function getAllArticles() {
         : { url: '' },
       publisheddate: item.fields.publisheddate as string,
       category: item.fields.category as string,
+      verdict: item.fields.verdict as string || null,
     }))
     .sort((a, b) => {
       if (!a.publisheddate) return 1;
@@ -47,5 +48,6 @@ export async function getArticleBySlug(slug: string) {
       : { url: '' },
     publisheddate: item.fields.publisheddate,
     category: item.fields.category,
+    verdict: item.fields.verdict || null,
   };
 }

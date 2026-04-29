@@ -9,10 +9,18 @@ type Article = {
   coverImage: { url: string };
   category: string;
   publisheddate: string;
+  verdict?: string | null;
 };
 
 export default function ArticleCard({ article }: { article: Article }) {
   const [hovered, setHovered] = useState(false);
+
+  const verdictConfig: { [key: string]: { bg: string; label: string } } = {
+    'verifie': { bg: '#026f5c', label: '✅ Verifie' },
+    'faux': { bg: '#8b0000', label: '❌ Faux' },
+    'partiellement-vrai': { bg: '#b8860b', label: '⚠️ Partiel' },
+    'en-cours': { bg: '#1a3a5c', label: '🔍 En cours' },
+  };
 
   return (
     <Link href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
@@ -30,8 +38,15 @@ export default function ArticleCard({ article }: { article: Article }) {
               style={{ objectFit: 'cover', objectPosition: 'center top', transform: hovered ? 'scale(1.08)' : 'scale(1)', transition: 'transform 0.4s ease' }}
             />
           )}
-          <div style={{ position: 'absolute' as const, top: '10px', left: '10px', background: '#026f5c', color: '#f0f5f0', fontSize: '9px', fontWeight: 700, padding: '3px 8px', borderRadius: '2px', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>
-            {article.category}
+          <div style={{ position: 'absolute' as const, top: '10px', left: '10px', display: 'flex', gap: '6px', flexWrap: 'wrap' as const }}>
+            <div style={{ background: '#026f5c', color: '#f0f5f0', fontSize: '9px', fontWeight: 700, padding: '3px 8px', borderRadius: '2px', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>
+              {article.category}
+            </div>
+            {article.verdict && verdictConfig[article.verdict] && (
+              <div style={{ background: verdictConfig[article.verdict].bg, color: '#f0f5f0', fontSize: '9px', fontWeight: 700, padding: '3px 8px', borderRadius: '2px', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>
+                {verdictConfig[article.verdict].label}
+              </div>
+            )}
           </div>
           {hovered && (
             <div style={{ position: 'absolute' as const, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.9 }}>
