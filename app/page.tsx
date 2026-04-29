@@ -55,7 +55,7 @@ export default async function HomePage() {
       const isEven = i % 2 === 0;
       const bg = isEven ? '#026f5c' : '#01503f';
       const textColor = '#ffffff';
-      const categoryColor = isEven ? '#003d2e' : '#005c27';
+      const categoryColor = isEven ? '#003d2e' : '#003d2e';
 
       return (
         <Link key={article.slug} href={`/article/${article.slug}`} style={{ textDecoration: 'none', display: 'block' }}>
