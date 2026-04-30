@@ -10,10 +10,12 @@ export default async function CategoriePage({ params }: { params: Promise<{ slug
   const tous = await getAllArticles();
 
   const categories: { [key: string]: string } = {
-   'equipe-nationale': 'Selection',
-    'transferts': 'Transferts',
-    'clubs': 'Clubs',
-  };
+  'equipe-nationale': 'Selection',
+  'transferts': 'Transferts',
+  'clubs': 'Clubs',
+  'jeunes': 'Jeunes',
+  'statistiques': 'Statistiques',
+};
 
   const nomCategorie = categories[slug] || slug;
 

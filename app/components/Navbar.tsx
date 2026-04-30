@@ -14,6 +14,8 @@ export default function Navbar({ active }: { active?: string }) {
     { label: 'Selection', href: '/categorie/equipe-nationale' },
     { label: 'Transferts', href: '/categorie/transferts' },
     { label: 'Clubs', href: '/categorie/clubs' },
+    { label: 'Jeunes', href: '/categorie/jeunes' },
+    { label: 'Statistiques', href: '/categorie/statistiques' },
     { label: 'Recherche', href: '/recherche' },
     { label: 'Galerie', href: '/galerie' },
     { label: 'A Propos', href: '/a-propos' },
@@ -30,13 +32,13 @@ export default function Navbar({ active }: { active?: string }) {
   return (
     <>
       <nav style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', height: '70px', position: 'relative' as const, zIndex: 100 }}>
-        <div className="nav-desktop-left" style={{ display: 'flex', gap: '20px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
-          {['Accueil', 'Actualites', 'Selection', 'Transferts', 'Clubs'].map(l => (
+        <div className="nav-desktop-left" style={{ display: 'flex', gap: '16px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
+          {['Accueil', 'Actualites', 'Selection', 'Transferts', 'Clubs', 'Jeunes', 'Statistiques'].map(l => (
             <a key={l} href={
               l === 'Accueil' ? '/' :
               l === 'Actualites' ? '/actualites' :
               l === 'Selection' ? '/categorie/equipe-nationale' :
-              `/categorie/${l.toLowerCase().replace(/ /g, '-')}`
+              `/categorie/${l.toLowerCase()}`
             } style={{ color: active === l ? '#026f5c' : '#5a7a6a', borderBottom: active === l ? '2px solid #026f5c' : 'none', paddingBottom: '2px', textDecoration: 'none' }}>
               {l}
             </a>
@@ -83,7 +85,7 @@ export default function Navbar({ active }: { active?: string }) {
         </button>
       </nav>
 
-      <div style={{ background: '#060a06', maxHeight: menuOpen ? '700px' : '0', overflow: 'hidden', transition: 'max-height 0.4s ease', zIndex: 99, position: 'relative' as const, borderBottom: menuOpen ? '1px solid #0d2a1f' : 'none' }}>
+      <div style={{ background: '#060a06', maxHeight: menuOpen ? '800px' : '0', overflow: 'hidden', transition: 'max-height 0.4s ease', zIndex: 99, position: 'relative' as const, borderBottom: menuOpen ? '1px solid #0d2a1f' : 'none' }}>
         <div style={{ padding: '16px 20px', display: 'flex', flexDirection: 'column' as const, gap: '4px' }}>
           <form onSubmit={handleSearch} style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
             <input
