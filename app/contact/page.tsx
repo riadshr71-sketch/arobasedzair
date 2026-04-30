@@ -97,7 +97,7 @@ export default function Contact() {
                 Envoyer le message →
               </button>
               <p style={{ fontSize: '11px', color: '#4a6a5a', textAlign: 'center' as const }}>
-                Ou écrivez directement à <a href="mailto:arobasedzair@proton.me" style={{ color: '#026f5c' }}>arobasedzair@proton.me</a>
+                Ou écrivez directement à <a href="mailto:support@arobasedzair.com" style={{ color: '#026f5c' }}>arobasedzair@proton.me</a>
               </p>
             </form>
           </div>
