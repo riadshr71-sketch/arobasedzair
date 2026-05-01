@@ -78,6 +78,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div style={{ fontSize: '16px', lineHeight: 1.9, color: '#c0d0c0', display: 'flex', flexDirection: 'column' as const, gap: '16px' }}>
   {documentToReactComponents(article.content, {
     renderNode: {
+        'heading-3': (node, children) => (
+      <h3 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '24px', color: '#026f5c', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '8px 0' }}>{children}</h3>
+    ),
       'heading-4': (node, children) => (
         <h4 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '20px', color: '#f0f5f0', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '8px 0' }}>{children}</h4>
       ),
