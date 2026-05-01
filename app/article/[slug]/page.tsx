@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import ReadingProgress from '../../components/ReadingProgress';
 import Link from 'next/link';
+import Comments from '../../components/Comments';
 
 export const revalidate = 60;
 
@@ -77,7 +78,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div style={{ fontSize: '16px', lineHeight: 1.9, color: '#c0d0c0', display: 'flex', flexDirection: 'column' as const, gap: '16px' }}>
           {documentToReactComponents(article.content)}
         </div>
-
+<Comments slug={slug} titre={article.titre} />
         <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #0d2a1f' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
             <div style={{ width: '4px', height: '20px', background: '#026f5c' }}></div>
