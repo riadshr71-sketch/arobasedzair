@@ -12,9 +12,13 @@ export const metadata: Metadata = {
   keywords: 'football algerien, equipe nationale algerie, transferts, ligue 1 algerie, arobasedzair, media foot algerien',
   metadataBase: new URL('https://arobasedzair.com'),
   icons: {
-    icon: '/favicon.ico',
-    apple: '/favicon.ico',
-  },
+  icon: [
+    { url: '/favicon.ico' },
+    { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+  ],
+  apple: '/favicon.ico',
+  shortcut: '/favicon.ico',
+},
   openGraph: {
     title: 'Arobasedzair — Le football algerien comme vous ne l\'avez jamais vecu',
     description: 'Le football algerien comme vous ne l\'avez jamais vecu. Actualites, transferts, analyses et photos exclusives.',
