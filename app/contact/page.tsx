@@ -34,7 +34,7 @@ export default function Contact() {
                 <span style={{ fontSize: '24px', flexShrink: 0 }}>📧</span>
                 <div>
                   <div style={{ fontSize: '11px', color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', fontWeight: 700, marginBottom: '4px' }}>Email</div>
-                  <a href="mailto:support@arobasedzair.com" style={{ fontSize: '14px', color: '#026f5c', textDecoration: 'none', fontWeight: 700 }}>arobasedzair@proton.me</a>
+                  <a href="mailto:support@arobasedzair.com" style={{ fontSize: '14px', color: '#026f5c', textDecoration: 'none', fontWeight: 700 }}>support@arobasedzair.com</a>
                 </div>
               </div>
               <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '8px', padding: '20px', display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -97,7 +97,7 @@ export default function Contact() {
                 Envoyer le message →
               </button>
               <p style={{ fontSize: '11px', color: '#4a6a5a', textAlign: 'center' as const }}>
-                Ou écrivez directement à <a href="mailto:support@arobasedzair.com" style={{ color: '#026f5c' }}>arobasedzair@proton.me</a>
+                Ou écrivez directement à <a href="mailto:support@arobasedzair.com" style={{ color: '#026f5c' }}>support@arobasedzair.com</a>
               </p>
             </form>
           </div>
