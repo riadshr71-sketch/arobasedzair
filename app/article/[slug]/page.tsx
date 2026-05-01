@@ -76,8 +76,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           </div>
         )}
         <div style={{ fontSize: '16px', lineHeight: 1.9, color: '#c0d0c0', display: 'flex', flexDirection: 'column' as const, gap: '16px' }}>
-          {documentToReactComponents(article.content)}
-        </div>
+  {documentToReactComponents(article.content, {
+    renderNode: {
+      'heading-4': (node, children) => (
+        <h4 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '20px', color: '#f0f5f0', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '8px 0' }}>{children}</h4>
+      ),
+      'heading-5': (node, children) => (
+        <h5 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '16px', color: '#026f5c', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '6px 0' }}>{children}</h5>
+      ),
+    }
+  })}
+</div>
 <Comments slug={slug} titre={article.titre} />
         <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #0d2a1f' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
