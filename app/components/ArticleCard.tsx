@@ -54,8 +54,8 @@ export default function ArticleCard({ article }: { article: Article }) {
             </div>
           )}
         </div>
-        <div style={{ padding: '14px' }}>
-          <h3 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', fontWeight: 700, color: '#e0e8e0', lineHeight: 1.3, margin: '0 0 8px', textTransform: 'uppercase' as const }}>{article.titre}</h3>
+       <div style={{ padding: '14px', height: '90px', overflow: 'hidden' }}>
+          <h3 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '14px', fontWeight: 700, color: '#e0e8e0', lineHeight: 1.3, margin: '0 0 8px', textTransform: 'uppercase' as const }}>{article.titre}</h3>
           <span style={{ fontSize: '11px', color: '#4a6a5a' }}>
             {article.publisheddate ? new Date(article.publisheddate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' }) : ''}
           </span>
