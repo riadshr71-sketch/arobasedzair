@@ -6,7 +6,7 @@ export default function Comments({ slug, titre }: { slug: string; titre: string 
     <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #0d2a1f' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px' }}>
         <div style={{ width: '4px', height: '20px', background: '#026f5c' }}></div>
-        <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '16px', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Commentaires</span>
+        <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '16px', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Commentaires</span>
       </div>
       <DiscussionEmbed
         shortname='arobasedzair-com'

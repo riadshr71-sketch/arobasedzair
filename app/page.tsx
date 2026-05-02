@@ -36,7 +36,7 @@ export default async function HomePage() {
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#026f5c', animation: 'pulse 1.5s infinite' }} />
-        <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', color: '#f0f5f0' }}>Fil en direct</span>
+        <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', color: '#f0f5f0' }}>Fil en direct</span>
       </div>
       <a href="/actualites" style={{ fontSize: '10px', fontWeight: 700, color: '#5a7a6a', textTransform: 'uppercase' as const, letterSpacing: '1px', textDecoration: 'none' }}>
         Voir tout →
@@ -67,7 +67,7 @@ export default async function HomePage() {
             <span style={{ fontSize: '10px', fontWeight: 700, color: categoryColor, textTransform: 'uppercase' as const, letterSpacing: '1px', flexShrink: 0 }}>
               {article.category}
             </span>
-            <span style={{ fontSize: '13px', fontWeight: 700, color: textColor, lineHeight: 1.3, fontFamily: 'Druk, Georgia, serif', textTransform: 'uppercase' as const }}>
+            <span style={{ fontSize: '13px', fontWeight: 700, color: textColor, lineHeight: 1.3, fontFamily: 'Barlow Condensed, sans-serif', textTransform: 'uppercase' as const }}>
               {article.titre}
             </span>
           </div>
@@ -81,7 +81,7 @@ export default async function HomePage() {
       <section style={{ padding: '48px 40px', maxWidth: '1280px', margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
           <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
-          <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Dernieres Actualites</h2>
+          <h2 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Dernieres Actualites</h2>
         </div>
         <div className="articles-grid">
           {restArticles.map(article => (
@@ -107,7 +107,7 @@ export default async function HomePage() {
           <div key={f.title} style={{ padding: '22px 20px', borderRight: i < 3 ? '1px solid #0d2a1f' : 'none', display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
             <span style={{ fontSize: '22px', flexShrink: 0 }}>{f.icon}</span>
             <div>
-              <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', color: '#f0f5f0', marginBottom: '5px' }}>{f.title}</div>
+              <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', color: '#f0f5f0', marginBottom: '5px' }}>{f.title}</div>
               <div style={{ fontSize: '11px', color: '#4a6a5a', lineHeight: 1.5 }}>{f.desc}</div>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default async function HomePage() {
       <div className="footer">
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
-          <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
+          <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
         </div>
         <div style={{ display: 'flex', gap: '16px', fontSize: '11px', flexWrap: 'wrap' as const, justifyContent: 'center' }}>
           <a href="/mentions-legales" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Mentions legales</a>

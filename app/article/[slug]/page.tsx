@@ -64,7 +64,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <span style={{ background: '#026f5c', color: '#f0f5f0', fontSize: '10px', fontWeight: 700, padding: '4px 10px', borderRadius: '2px', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>
           {article.category}
         </span>
-        <h1 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '52px', lineHeight: 1, margin: '18px 0', letterSpacing: '1px', textTransform: 'uppercase' as const }}>
+        <h1 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '52px', lineHeight: 1, margin: '18px 0', letterSpacing: '1px', textTransform: 'uppercase' as const }}>
           {article.titre}
         </h1>
         <p style={{ fontSize: '13px', color: '#4a6a5a', marginBottom: '32px' }}>
@@ -79,13 +79,13 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   {documentToReactComponents(article.content, {
     renderNode: {
         'heading-3': (node, children) => (
-      <h3 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '24px', color: '#026f5c', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '8px 0' }}>{children}</h3>
+      <h3 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '24px', color: '#026f5c', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '8px 0' }}>{children}</h3>
     ),
       'heading-4': (node, children) => (
-        <h4 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '20px', color: '#f0f5f0', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '8px 0' }}>{children}</h4>
+        <h4 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '20px', color: '#f0f5f0', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '8px 0' }}>{children}</h4>
       ),
       'heading-5': (node, children) => (
-        <h5 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '16px', color: '#026f5c', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '6px 0' }}>{children}</h5>
+        <h5 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '16px', color: '#026f5c', textTransform: 'uppercase' as const, letterSpacing: '1px', margin: '6px 0' }}>{children}</h5>
       ),
     }
   })}
@@ -94,7 +94,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         <div style={{ marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #0d2a1f' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
             <div style={{ width: '4px', height: '20px', background: '#026f5c' }}></div>
-            <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '16px', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Partager l'article</span>
+            <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '16px', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Partager l'article</span>
           </div>
           <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' as const }}>
             <a href={`https://twitter.com/intent/tweet?text=${titre}&url=${url}&via=arobasedzair2`} target="_blank" style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '4px', padding: '10px 16px', textDecoration: 'none', color: '#f0f5f0', fontSize: '12px', fontWeight: 700 }}>
@@ -126,7 +126,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
               <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
-              <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Articles similaires</h2>
+              <h2 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '22px', margin: 0, letterSpacing: '1px', textTransform: 'uppercase' as const }}>Articles similaires</h2>
             </div>
             <div className="similaires-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
               {similaires.map(a => (
@@ -141,7 +141,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                       <div style={{ display: 'inline-block', background: '#026f5c', color: '#f0f5f0', fontSize: '8px', fontWeight: 700, padding: '2px 7px', borderRadius: '2px', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: '8px' }}>
                         {a.category}
                       </div>
-                      <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '13px', color: '#f0f5f0', lineHeight: 1.3, textTransform: 'uppercase' as const, marginBottom: '6px' }}>
+                      <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '13px', color: '#f0f5f0', lineHeight: 1.3, textTransform: 'uppercase' as const, marginBottom: '6px' }}>
                         {a.titre}
                       </div>
                       <div style={{ fontSize: '11px', color: '#4a6a5a' }}>
@@ -159,7 +159,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <div className="footer">
   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
     <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
-    <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
+    <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
   </div>
   <div style={{ display: 'flex', gap: '16px', fontSize: '11px', flexWrap: 'wrap' as const, justifyContent: 'center' }}>
     <a href="/mentions-legales" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Mentions légales</a>

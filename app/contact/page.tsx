@@ -13,7 +13,7 @@ export default function Contact() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '2.5px', color: '#026f5c' }}>Nous contacter</span>
           <div style={{ width: '28px', height: '2px', background: '#026f5c' }}></div>
         </div>
-        <h1 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '56px', lineHeight: 1, margin: '0 0 20px', textTransform: 'uppercase' as const }}>
+        <h1 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '56px', lineHeight: 1, margin: '0 0 20px', textTransform: 'uppercase' as const }}>
           Contactez<br /><span style={{ color: '#026f5c' }}>Arobasedzair</span>
         </h1>
         <p style={{ fontSize: '15px', color: '#6a8a7a', lineHeight: 1.8, maxWidth: '500px', margin: '0 auto' }}>
@@ -27,7 +27,7 @@ export default function Contact() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
               <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
-              <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '20px', margin: 0, textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Nos coordonnées</h2>
+              <h2 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '20px', margin: 0, textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Nos coordonnées</h2>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '16px' }}>
               <div style={{ background: '#0a0f0a', border: '1px solid #0d2a1f', borderRadius: '8px', padding: '20px', display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -59,7 +59,7 @@ export default function Contact() {
                 </div>
               </div>
               <div style={{ background: '#026f5c', borderRadius: '8px', padding: '20px' }}>
-                <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: '8px' }}>Collaborations & Partenariats</div>
+                <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '14px', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: '8px' }}>Collaborations & Partenariats</div>
                 <p style={{ fontSize: '13px', color: '#c0e0d0', lineHeight: 1.6, margin: 0 }}>
                   Vous souhaitez collaborer avec Arobasedzair ? Envoyez-nous un message et nous reviendrons vers vous rapidement.
                 </p>
@@ -70,7 +70,7 @@ export default function Contact() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '32px' }}>
               <div style={{ width: '4px', height: '24px', background: '#026f5c' }}></div>
-              <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '20px', margin: 0, textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Envoyer un message</h2>
+              <h2 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '20px', margin: 0, textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Envoyer un message</h2>
             </div>
             <form action="https://formspree.io/f/xqewozje" method="POST" style={{ display: 'flex', flexDirection: 'column' as const, gap: '16px' }}>
               <div>
@@ -108,7 +108,7 @@ export default function Contact() {
       <div style={{ background: '#060a06', borderTop: '1px solid #0d2a1f', padding: '20px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
-          <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
+          <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
         </div>
         <div style={{ fontSize: '11px', color: '#3a5a4a' }}>© 2026 · Média 100% Football Algérien</div>
       </div>

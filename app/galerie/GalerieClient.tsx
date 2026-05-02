@@ -48,7 +48,7 @@ export default function GalerieClient({ photos }: { photos: Photo[] }) {
           </button>
 
           <div style={{ position: 'absolute' as const, bottom: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const }}>
-            <div style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '16px', color: '#f0f5f0', marginBottom: '6px' }}>{photo.titre}</div>
+            <div style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '16px', color: '#f0f5f0', marginBottom: '6px' }}>{photo.titre}</div>
             <div style={{ background: '#026f5c', color: '#f0f5f0', fontSize: '9px', fontWeight: 700, padding: '3px 10px', borderRadius: '2px', textTransform: 'uppercase' as const, letterSpacing: '1px', display: 'inline-block' }}>{photo.categorie}</div>
             <div style={{ fontSize: '11px', color: '#5a7a6a', marginTop: '8px' }}>{(selected ?? 0) + 1} / {photos.length}</div>
           </div>

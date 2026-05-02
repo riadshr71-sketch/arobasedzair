@@ -20,7 +20,7 @@ export default async function Actualites() {
           <span style={{ fontSize: '10px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '2.5px', color: '#026f5c' }}>Toute l'actualité</span>
           <div style={{ width: '28px', height: '2px', background: '#026f5c' }}></div>
         </div>
-        <h1 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '52px', lineHeight: 1, margin: '0 0 12px', textTransform: 'uppercase' as const }}>
+        <h1 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '52px', lineHeight: 1, margin: '0 0 12px', textTransform: 'uppercase' as const }}>
           Dernieres <span style={{ color: '#026f5c' }}>Actualites</span>
         </h1>
         <p style={{ fontSize: '13px', color: '#5a7a6a' }}>
@@ -39,7 +39,7 @@ export default async function Actualites() {
       <div className="footer">
   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
     <Image src="/images/arobaselogo.png" alt="Arobasedzair" width={32} height={32} style={{ objectFit: 'contain' }} />
-    <span style={{ fontFamily: 'Druk, Georgia, serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
+    <span style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '14px', letterSpacing: '2px', color: '#026f5c', textTransform: 'uppercase' as const }}>Arobasedzair</span>
   </div>
   <div style={{ display: 'flex', gap: '16px', fontSize: '11px', flexWrap: 'wrap' as const, justifyContent: 'center' }}>
     <a href="/mentions-legales" style={{ color: '#3a5a4a', textDecoration: 'none' }}>Mentions légales</a>

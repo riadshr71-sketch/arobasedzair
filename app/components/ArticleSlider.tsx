@@ -93,7 +93,7 @@ export default function ArticleSlider({ articles }: { articles: Article[] }) {
         <div style={{ display: 'inline-block', background: '#026f5c', color: '#f0f5f0', fontSize: '9px', fontWeight: 700, padding: '3px 10px', borderRadius: '2px', textTransform: 'uppercase' as const, letterSpacing: '1.5px', marginBottom: '12px' }}>
           {articles[current]?.category}
         </div>
-        <h2 style={{ fontFamily: 'Druk, Georgia, serif', fontSize: isMobile ? '20px' : '52px', color: '#f0f5f0', lineHeight: 1.05, margin: '0 0 12px', textTransform: 'uppercase' as const, maxWidth: '900px' }}>
+        <h2 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: isMobile ? '20px' : '52px', color: '#f0f5f0', lineHeight: 1.05, margin: '0 0 12px', textTransform: 'uppercase' as const, maxWidth: '900px' }}>
           {articles[current]?.titre}
         </h2>
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', pointerEvents: 'all' }}>
