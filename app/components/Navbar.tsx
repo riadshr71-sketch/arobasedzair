@@ -32,7 +32,7 @@ export default function Navbar({ active }: { active?: string }) {
   return (
     <>
       <nav style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', height: '70px', position: 'relative' as const, zIndex: 100 }}>
-        <div className="nav-desktop-left" style={{ display: 'flex', gap: '16px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
+        <div className="nav-desktop-left" style={{ display: 'flex', gap: '16px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
           {['Accueil', 'Actualites', 'Selection', 'Transferts', 'Clubs', 'Jeunes', 'Statistiques'].map(l => (
             <a key={l} href={
               l === 'Accueil' ? '/' :
