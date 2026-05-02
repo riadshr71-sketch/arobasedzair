@@ -23,13 +23,13 @@ export default function ArticleCard({ article }: { article: Article }) {
   };
 
   return (
-    <Link href={`/article/${article.slug}`} style={{ textDecoration: 'none' }}>
+    <Link href={`/article/${article.slug}`} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
       <div
-        style={{ background: '#0a0f0a', border: hovered ? '1px solid #026f5c44' : '1px solid #0d2a1f', borderRadius: '6px', overflow: 'hidden', transition: 'border-color 0.3s' }}
+        style={{ background: '#0a0f0a', border: hovered ? '1px solid #026f5c44' : '1px solid #0d2a1f', borderRadius: '6px', overflow: 'hidden', transition: 'border-color 0.3s', display: 'flex', flexDirection: 'column' as const, height: '100%' }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <div style={{ position: 'relative' as const, height: '190px', overflow: 'hidden' }}>
+        <div style={{ position: 'relative' as const, height: '200px', flexShrink: 0, overflow: 'hidden' }}>
           {article.coverImage.url && (
             <Image
               src={article.coverImage.url}
@@ -54,8 +54,8 @@ export default function ArticleCard({ article }: { article: Article }) {
             </div>
           )}
         </div>
-       <div style={{ padding: '14px', height: '90px', overflow: 'hidden' }}>
-          <h3 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '14px', fontWeight: 700, color: '#e0e8e0', lineHeight: 1.3, margin: '0 0 8px', textTransform: 'uppercase' as const }}>{article.titre}</h3>
+        <div style={{ padding: '14px', flex: 1, display: 'flex', flexDirection: 'column' as const, justifyContent: 'space-between' }}>
+          <h3 style={{ fontFamily: 'Barlow Condensed, sans-serif', fontSize: '14px', fontWeight: 700, color: '#e0e8e0', lineHeight: 1.3, margin: '0 0 8px', textTransform: 'uppercase' as const, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>{article.titre}</h3>
           <span style={{ fontSize: '11px', color: '#4a6a5a' }}>
             {article.publisheddate ? new Date(article.publisheddate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' }) : ''}
           </span>
