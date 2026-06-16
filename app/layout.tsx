@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   keywords: 'football algerien, equipe nationale algerie, transferts, ligue 1 algerie, arobasedzair, media foot algerien',
   metadataBase: new URL('https://arobasedzair.com'),
   icons: {
-  icon: [
-    { url: '/favicon.ico' },
-    { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
-  ],
-  apple: '/favicon.ico',
-  shortcut: '/favicon.ico',
-},
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+    ],
+    apple: '/favicon.ico',
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     title: 'Arobasedzair — Le football algerien comme vous ne l\'avez jamais vecu',
     description: 'Le football algerien comme vous ne l\'avez jamais vecu. Actualites, transferts, analyses et photos exclusives.',
@@ -39,6 +39,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6296660804889380"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body style={{ margin: 0, padding: 0, background: '#080c08' }}>
         <CookieBanner />
         <Analytics />
