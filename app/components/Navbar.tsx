@@ -14,6 +14,7 @@ export default function Navbar({ active }: { active?: string }) {
     { label: 'Selection', href: '/categorie/equipe-nationale' },
     { label: 'Transferts', href: '/categorie/transferts' },
     { label: 'Clubs', href: '/categorie/clubs' },
+    { label: 'Championnat', href: '/categorie/championnat' },
     { label: 'Jeunes', href: '/categorie/jeunes' },
     { label: 'Statistiques', href: '/categorie/statistiques' },
     { label: 'Recherche', href: '/recherche' },
@@ -32,14 +33,14 @@ export default function Navbar({ active }: { active?: string }) {
   return (
     <>
       <nav style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', height: '70px', position: 'relative' as const, zIndex: 100 }}>
-        <div className="nav-desktop-left" style={{ display: 'flex', gap: '16px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
-          {['Accueil', 'Actualites', 'Selection', 'Transferts', 'Clubs', 'Jeunes', 'Statistiques'].map(l => (
+        <div className="nav-desktop-left" style={{ display: 'flex', gap: '16px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
+          {['Accueil', 'Actualites', 'Selection', 'Transferts', 'Clubs', 'Championnat', 'Jeunes', 'Statistiques'].map(l => (
             <a key={l} href={
               l === 'Accueil' ? '/' :
               l === 'Actualites' ? '/actualites' :
               l === 'Selection' ? '/categorie/equipe-nationale' :
               `/categorie/${l.toLowerCase()}`
-            } style={{ color: active === l ? '#026f5c' : '#5a7a6a', borderBottom: active === l ? '2px solid #026f5c' : 'none', paddingBottom: '2px', textDecoration: 'none' }}>
+            } style={{ color: active === l ? '#026f5c' : '#5a7a6a', borderBottom: active === l ? '2px solid #026f5c' : 'none', paddingBottom: '2px', textDecoration: 'none', fontSize: '13px' }}>
               {l}
             </a>
           ))}
