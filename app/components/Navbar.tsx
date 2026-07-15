@@ -10,8 +10,8 @@ export default function Navbar({ active }: { active?: string }) {
 
   const liens = [
     { label: 'Accueil', href: '/' },
-    { label: 'Actualites', href: '/actualites' },
-    { label: 'Selection', href: '/categorie/equipe-nationale' },
+    { label: 'Actualités', href: '/actualites' },
+    { label: 'Sélection', href: '/categorie/equipe-nationale' },
     { label: 'Transferts', href: '/categorie/transferts' },
     { label: 'Clubs', href: '/categorie/clubs' },
     { label: 'Championnat', href: '/categorie/championnat' },
@@ -19,7 +19,7 @@ export default function Navbar({ active }: { active?: string }) {
     { label: 'Statistiques', href: '/categorie/statistiques' },
     { label: 'Recherche', href: '/recherche' },
     { label: 'Galerie', href: '/galerie' },
-    { label: 'A Propos', href: '/a-propos' },
+    { label: 'À Propos', href: '/a-propos' },
   ];
 
   const handleSearch = (e: React.FormEvent) => {
@@ -33,15 +33,19 @@ export default function Navbar({ active }: { active?: string }) {
   return (
     <>
       <nav style={{ background: '#060a06', borderBottom: '1px solid #0d2a1f', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', height: '70px', position: 'relative' as const, zIndex: 100 }}>
-        <div className="nav-desktop-left" style={{ display: 'flex', gap: '16px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
-          {['Accueil', 'Actualites', 'Selection', 'Transferts', 'Clubs', 'Championnat', 'Jeunes', 'Statistiques'].map(l => (
-            <a key={l} href={
-              l === 'Accueil' ? '/' :
-              l === 'Actualites' ? '/actualites' :
-              l === 'Selection' ? '/categorie/equipe-nationale' :
-              `/categorie/${l.toLowerCase()}`
-            } style={{ color: active === l ? '#026f5c' : '#5a7a6a', borderBottom: active === l ? '2px solid #026f5c' : 'none', paddingBottom: '2px', textDecoration: 'none', fontSize: '13px' }}>
-              {l}
+        <div className="nav-desktop-left" style={{ display: 'flex', gap: '16px', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1.5px' }}>
+          {[
+            { label: 'Accueil', href: '/' },
+            { label: 'Actualités', href: '/actualites' },
+            { label: 'Sélection', href: '/categorie/equipe-nationale' },
+            { label: 'Transferts', href: '/categorie/transferts' },
+            { label: 'Clubs', href: '/categorie/clubs' },
+            { label: 'Championnat', href: '/categorie/championnat' },
+            { label: 'Jeunes', href: '/categorie/jeunes' },
+            { label: 'Statistiques', href: '/categorie/statistiques' },
+          ].map(l => (
+            <a key={l.label} href={l.href} style={{ color: active === l.label ? '#026f5c' : '#5a7a6a', borderBottom: active === l.label ? '2px solid #026f5c' : 'none', paddingBottom: '2px', textDecoration: 'none' }}>
+              {l.label}
             </a>
           ))}
         </div>
@@ -65,7 +69,7 @@ export default function Navbar({ active }: { active?: string }) {
             </button>
           </form>
           <a href="/galerie" style={{ color: active === 'Galerie' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>Galerie</a>
-          <a href="/a-propos" style={{ color: active === 'A Propos' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>A Propos</a>
+          <a href="/a-propos" style={{ color: active === 'À Propos' ? '#026f5c' : '#5a7a6a', textDecoration: 'none' }}>À Propos</a>
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
             <a href="https://twitter.com/arobasedzair2" target="_blank" style={{ textDecoration: 'none' }}>
               <Image src="/images/twitter-x-logo-png-9.png" alt="Twitter" width={20} height={20} style={{ objectFit: 'contain' }} />
